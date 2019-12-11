@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <!--Creamos el div principal de Vue-->
+    <div id="app">
+        <!--Llamos a la propiedad creada con vue en 01.js-->
+        <h1>{{titulo}}</h1>
+
+        <!--Generamos una casilla de texto -->
+        <!--v-model nos permite haceruna conexion directa entre el input y js-->
+        <input type="text" v-model="nuevoMedicamento" @keyup.enter="agregarMedicamento">
+        <!--Crearemos un boton y utilizaremos los eventos de vue con nuestras funciones creadas-->
+        <button @click="agregarMedicamento">Agregar</button>
+
+        <ul>
+            <!--Recorreremos array con un for de vue -->
+            <!--days sera el elemento creado para guardar los diferentes valores del bucle medicamentos-->
+            <!--<li v-for="medicamento of medicamentos">{{medicamento}}</li>-->
+
+            <li v-for="medicamento of medicamentos">
+                {{medicamento.nombre}}
+                <input type="number" v-model.number="medicamento.cantidad">
+                <!--Crearemos dos botones para sumar y restar cantidades-->
+                <button @click="medicamento.cantidad++">+</button>
+                <button @click="medicamento.cantidad--">-</button>
+                <!--Con el span le comparamos e indicamos un resultado-->
+                <span v-if="medicamento.cantidad == 0">--Sin stock--</span>
+                <br></br>
+            </li>
+        </ul>
+        <h4>TOTAL: {{sumarCantidades}}</h4>
+
+    </div>
+
+    <!--Script cdn de Vu.js-->
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    </script>
+    <script src="Eventos2.js"></script>
+</body>
+
+</html>

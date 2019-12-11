@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Componentes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Utilizaremos las clases css de bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Utilizaremos los cdns de vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Llamamos a nuestros funciones creadas-->
+    <script src="Componentes/Mensaje.js"></script>
+    <script src="Componentes/Contador.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--Usaremos los componentes creados -->
+        <mensaje></mensaje>
+        <contador></contador>
+
+
+    </div>
+    <!--INSTANCIAMOS VUE DE ESTA FORMA PARA PODER UTILIZAR DIFERENTES COMPONENTES -->
+    <script>
+        new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+
+</html>
+
+</html>

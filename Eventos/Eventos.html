@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <!--Creamos el div principal de Vue-->
+    <div id="app">
+        <!--Llamos a la propiedad creada con vue en 01.js-->
+        <h1>{{titulo}}</h1>
+
+        <!--Generamos una casilla de texto -->
+        <!--v-model nos permite haceruna conexion directa entre el input y js-->
+        <input type="text" v-model="nuevoDia">
+        <!--Crearemos un boton y utilizaremos los eventos de vue con nuestras funciones creadas-->
+        <button v-on:click="agregarDias()">Agregar</button>
+
+        <ul>
+            <!--Recorreremos array con un for de vue -->
+            <!--days sera el elemento creado para guardar los diferentes valores del bucle dias-->
+            <li v-for="days of dias">{{days}}</li>
+            <br></br>
+            <li v-for="days of dias">{{days.nombre}}-{{days.mes}}</li>
+        </ul>
+
+
+
+    </div>
+
+    <!--Script cdn de Vu.js-->
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    </script>
+    <script src="Eventos.js"></script>
+</body>
+
+</html>
